@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="result-container">
+    <h2>Resultados para: {{ device_name }}</h2>
+    <p>Consumo energético mensual estimado: <strong>{{ monthly_consumption }} kWh</strong></p>
+    <h3>Consejo para ahorrar energía:</h3>
+    <p>{{ tip }}</p>
+    <a href="/">Volver al inicio</a>
+</div>
+{% endblock %}

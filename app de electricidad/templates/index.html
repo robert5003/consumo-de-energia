@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="form-container">
+    <form action="/calculate" method="post">
+        <label for="device_name">Nombre del dispositivo:</label>
+        <input type="text" id="device_name" name="device_name" required>
+
+        <label for="wattage">Consumo en Watts (W):</label>
+        <input type="number" id="wattage" name="wattage" step="0.01" required>
+
+        <label for="hours_per_day">Horas de uso diario:</label>
+        <input type="number" id="hours_per_day" name="hours_per_day" step="0.01" required>
+
+        <label for="days_per_month">Días de uso al mes:</label>
+        <input type="number" id="days_per_month" name="days_per_month" required>
+
+        <button type="submit">Calcular Consumo</button>
+    </form>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+</div>
+{% endblock %}
